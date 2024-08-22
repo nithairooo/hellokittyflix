@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelloFlix</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilo do modal */
+        .modal {
+            display: none; /* Esconde o modal por padrão */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro semi-transparente */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; /* Garante que o modal fique acima de outros conteúdos */
+        }
+
+        .modal-content {
+            background-color: #f8d7da; /* Rosa clarinho */
+            color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            border: 5px solid white; /* Borda branca */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra para destaque */
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+        }
+
+        .modal-content p {
+            margin: 20px 0;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 1.5em;
+            background: none;
+            border: none;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho com navegação -->
+    <header>
+        <div class="logo">HelloFlix</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="minha-lista.html" class="active">Minha Lista</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Seção de Destaque -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Bem-vindo ao HelloFlix</h1>
+            <p>Seu lugar para assistir a aventuras fofas e muito mais!</p>
+            <button id="infoButton">Informações</button>
+        </div>
+    </section>
+    
+    <!-- Carrossel de Vídeos -->
+    <section class="carousel">
+        <h2>Mais Alguns Vídeos Interessantes</h2>
+        <div class="carousel-container">
+            <div class="carousel-item">
+                <iframe width="200" height="112" src="https://www.youtube.com/embed/7HziaXActwc?si=_MhVOJc68XGykQbo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p>O Mundo de Hello Kitty</p>
+            </div>
+            <div class="carousel-item">
+                <iframe width="200" height="112" src="https://www.youtube.com/embed/AdejLVjITuU?si=AbR3RxjwMG0YEAeS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p>Conhecendo Hello Kitty</p>
+            </div>
+            <div class="carousel-item">
+                <iframe width="200" height="112" src="https://www.youtube.com/embed/Rh4e3mK_4_s?si=jtWCa3PEAXXjhOZB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p>Videoclipes</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>© 2024 HelloFlix. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Modal -->
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Informações</h2>
+            <p>Este site foi feito por:</p>
+            <p>Nicoly</p>
+            <p>Clara</p>
+            <p>Felipe</p>
+            <p>Vinicius</p>
+            <p>Larissa</p>
+            <p>Do Terceiro Ano A da Escola Tiburcio Estevam de Siqueira.</p>
+        </div>
+    </div>
+
+    <!-- Script JavaScript -->
+    <script>
+        document.getElementById('infoButton').addEventListener('click', function() {
+            document.getElementById('infoModal').style.display = 'flex';
+        });
+
+        document.querySelector('.modal-close').addEventListener('click', function() {
+            document.getElementById('infoModal').style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target === document.getElementById('infoModal')) {
+                document.getElementById('infoModal').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
